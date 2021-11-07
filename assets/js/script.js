@@ -2,8 +2,6 @@
 $(".time-block").on("click", ".saveBtn", function() {
     var hour = $(this).parent().attr("id");
     var text = $(this).siblings(".description").val();
-    // schedule[hour] = text
-    // localStorage.setItem("schedule", JSON.stringify(schedule));
     localStorage.setItem(hour, text);
 });
 
@@ -11,7 +9,6 @@ $(".time-block").on("click", ".saveBtn", function() {
 var loadSchedule = function() {
     for (i = 8; i <= 17; i++) {
         $(".schedule" + i)[0].value = retrieveText("schedule" + i);
-        console.log(retrieveText("schedule" + i));
     };
 };
 
